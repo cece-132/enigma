@@ -1,0 +1,41 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/tanjiro/Desktop/Ruby_Learning/1Mod/Projects/enigma/spec/cipher_spec.rb": {
+        "lines": [
+          1,
+          null,
+          2,
+          1,
+          4,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      }
+    },
+    "timestamp": 1654827645
+  }
+}
