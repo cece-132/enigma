@@ -1,4 +1,4 @@
-class Cipher
+class Rotater
  attr_reader :alpha
  def initialize
   @alpha = ("a".."z").to_a << " "
@@ -15,7 +15,5 @@ class Cipher
  def revert_array_to_english(text)
   rotate_array(text).chars.map {|character| (character.ord - 6).chr}.join
  end
-
-
-
+ 
 end
