@@ -30,6 +30,7 @@ class Shifter
 
     def date_formater
         date = []
+        if @date == nil || 0
             @date = Date.today 
             day = @date.strftime("%m/%d/%Y").delete("/").chars[2..3]
             month = @date.strftime("%m/%d/%Y").delete("/").chars[0..1]
@@ -37,7 +38,8 @@ class Shifter
             date << day
             date << month
             date << year
-        @date = date.flatten.join.to_i
+            @date = date.flatten.join.to_i
+        end
     end
 
     def squared_date
