@@ -17,6 +17,8 @@ class Enigma
     end
 
     def encryptor(message, key = shifter.keys, date = shifter.date_formater)
+        separator(message)
+        rotate_a
         # new_message = encode(message, key, date)
         @encryption[:message] = message
         @encryption[:key] = key
@@ -51,14 +53,16 @@ class Enigma
     end
 
     def rotate_a
-     rotate = 0
-     message.chars.map do |character|
+     rotate = @key_a.map do |character|
       character.downcase.ord + @shifter.key_a
      end
-        rotate.chr
-        while rotate > 122
-            rotate -= 27
+     rotated = rotate.each do |ordinal_number|
+        while ordinal_number > 122
+            ordinal_number -= 27
         end
+        binding.pry
+        ordinal_number.chr
+    end
     end
 
     def decrypt(ciphertext, key, date)

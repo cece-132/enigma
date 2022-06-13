@@ -33,6 +33,13 @@ RSpec.describe do Enigma
         expect(@enigma.key_d.length).to eq 2
     end
 
+    it ' can rotate letters' do
+        expect(@enigma.encryptor("hello world","02715","1025")).to be_a Hash
+
+
+        expect(@enigma.rotate_a).to be_a Array
+    end
+
     xit 'can encode a message' do
         expect(@enigma.encode('hello world')).to eq "keder ohulw"
     end
