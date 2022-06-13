@@ -11,7 +11,7 @@ RSpec.describe do Enigma
         expect(@enigma.alpha.length).to eq 27
         expect(@enigma.shifter).to be_a Shifter
         expect(@enigma.shifter.keys.length).to eq 5
-        expect(@enigma.shifter.offsets).to be_a Date
+        expect(@enigma.shifter.date).to be_a Integer
     end
 
     it 'can return a Hash' do

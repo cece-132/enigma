@@ -2,10 +2,10 @@ require 'pry'
 require 'date'
 
 class Shifter
-    attr_reader :keys, :offsets
-    def initialize(keys = rand(99999).to_s.rjust(5, "0"), offsets = Date.today)
+    attr_reader :keys, :date
+    def initialize(keys = rand(99999).to_s.rjust(5, "0"), date = date_formater)
         @keys = keys
-        @offsets = offsets
+        @date = date
     end
 
     def separator
@@ -30,17 +30,18 @@ class Shifter
 
     def date_formater
         date = []
-        day = @offsets.strftime("%m/%d/%Y").delete("/").chars[2..3]
-        month = @offsets.strftime("%m/%d/%Y").delete("/").chars[0..1]
-        year =  @offsets.strftime("%m/%d/%Y").delete("/").chars[6..7]
-        date << day
-        date << month
-        date << year
-        date.flatten.join.to_i
+            @date = Date.today 
+            day = @date.strftime("%m/%d/%Y").delete("/").chars[2..3]
+            month = @date.strftime("%m/%d/%Y").delete("/").chars[0..1]
+            year =  @date.strftime("%m/%d/%Y").delete("/").chars[6..7]
+            date << day
+            date << month
+            date << year
+        @date = date.flatten.join.to_i
     end
 
     def squared_date
-        num = date_formater ** 2
+        num = @date ** 2
         num.to_s.chars.last(4).join.to_i
     end
 end
