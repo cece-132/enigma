@@ -9,7 +9,7 @@ RSpec.describe do Shifter
 
     it 'exists and has attributes' do
         expect(@shifter).to be_a Shifter
-        expect(@shifter.keys).to be_a Integer
+        expect(@shifter.keys).to be_a String
         expect(@shifter.offsets).to be_a Date
     end
 
@@ -25,10 +25,14 @@ RSpec.describe do Shifter
         expect(@shifter.key_d).to be_a Integer
     end
 
+    it 'can format the date by DDMMYY'do
+        expect(@shifter.date_formater).to be_a Integer
+        expect(@shifter.date_formater.to_s.length).to eq 6
+    end
+
     it 'can square the date' do
-        expect(@shifter.squared_date).to be_a Array
-        expect(@shifter.squared_date.first).to be_a String
-        expect(@shifter.squared_date.length).to eq 4
+        expect(@shifter.squared_date).to be_a Integer
+        expect(@shifter.squared_date.to_s.length).to eq 4
     end
 
 end

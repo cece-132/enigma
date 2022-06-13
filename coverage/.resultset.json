@@ -42,8 +42,8 @@
           null,
           2,
           1,
-          4,
-          4,
+          5,
+          5,
           null,
           null,
           1,
@@ -65,6 +65,10 @@
           null,
           null,
           1,
+          1,
+          1,
+          null,
+          null,
           1,
           1,
           1,
@@ -72,8 +76,28 @@
           null,
           null
         ]
+      },
+      "/Users/tanjiro/Desktop/Ruby_Learning/1Mod/Projects/enigma/spec/enigma_spec.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          2,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1654838663
+    "timestamp": 1655139454
   }
 }
