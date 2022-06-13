@@ -24,7 +24,14 @@ RSpec.describe do Enigma
         # expect(@enigma.encryption[:date]).to eq "1025"
     end
 
-    it 'can'
+    it 'can separate letters in message into a,b,c,d' do
+        @enigma.separator('hello world')
+
+        expect(@enigma.key_a.length).to eq 3
+        expect(@enigma.key_b.length).to eq 3
+        expect(@enigma.key_c.length).to eq 3
+        expect(@enigma.key_d.length).to eq 2
+    end
 
     xit 'can encode a message' do
         expect(@enigma.encode('hello world')).to eq "keder ohulw"
