@@ -32,8 +32,8 @@ RSpec.describe do Shifter
     end
 
     it 'can square the date' do
-        expect(@shifter.squared_date).to be_a Integer
-        expect(@shifter.squared_date.to_s.length).to eq 4
+        expect(@shifter.squared_date).to be_a Array
+        expect(@shifter.squared_date.length).to eq 4
     end
 
 end

@@ -15,7 +15,7 @@ RSpec.describe do Enigma
     end
 
     it 'can return a Hash' do
-        expect(@enigma.encryptor("hello world","02715","1025")).to be_a Hash
+        expect(@enigma.encryptor("hello world","02715","040895")).to be_a Hash
         expect(@enigma.encryption[:message]).to be_a String
         expect(@enigma.encryption[:message]).to eq "hello world"
         expect(@enigma.encryption[:message]).to eq "hello world"
@@ -34,10 +34,20 @@ RSpec.describe do Enigma
     end
 
     it ' can rotate letters' do
-        expect(@enigma.encryptor("hello world","02715","1025")).to be_a Hash
+        expect(@enigma.encryptor("hello world","02715","040895")).to be_a Hash
 
 
         expect(@enigma.rotate_a).to be_a Array
+        expect(@enigma.rotate_a).to eq ['k','r','u']
+
+        expect(@enigma.rotate_b).to be_a Array
+        expect(@enigma.rotate_b).to eq ['e',' ','l']
+
+        expect(@enigma.rotate_c).to be_a Array
+        expect(@enigma.rotate_c).to eq ['d','o','w']
+
+        expect(@enigma.rotate_d).to be_a Array
+        expect(@enigma.rotate_d).to eq ['e','h']
     end
 
     xit 'can encode a message' do

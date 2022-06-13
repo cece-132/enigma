@@ -44,7 +44,7 @@ class Shifter
 
     def squared_date
         num = @date.to_i ** 2
-        num.to_s.chars.last(4).join.to_i
+        num.to_s.chars.last(4)
     end
 end
 # num = @offsets.strftime.slice(2..-1).delete("-").to_i ** 2
