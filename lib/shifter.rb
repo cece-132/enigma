@@ -2,14 +2,14 @@ require 'pry'
 require 'date'
 
 class Shifter
-    attr_reader :keys, :date
+    attr_accessor :keys, :date
     def initialize(keys = rand(99999).to_s.rjust(5, "0"), date = date_formater)
-        @keys = keys
+        @keys = keys.to_s
         @date = date
     end
 
     def separator
-        @keys.to_s.rjust(5, "0").chars
+        @keys.rjust(5, "0").chars
     end
     
     def key_a
@@ -43,7 +43,7 @@ class Shifter
     end
 
     def squared_date
-        num = @date ** 2
+        num = @date.to_i ** 2
         num.to_s.chars.last(4).join.to_i
     end
 end

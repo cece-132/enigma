@@ -19,12 +19,15 @@ RSpec.describe do Enigma
         expect(@enigma.encryption[:message]).to be_a String
         expect(@enigma.encryption[:message]).to eq "hello world"
         expect(@enigma.encryption[:message]).to eq "hello world"
-        expect(@enigma.encryption[:key] && @enigma.encryption[:date]).to be_a String
-        expect(@enigma.encryption[:key]).to eq "02715"
-        expect(@enigma.encryption[:date]).to eq "1025"
+        # expect(@enigma.encryption[:key] && @enigma.encryption[:date]).to be_a String
+        # expect(@enigma.encryption[:key]).to eq "02715"
+        # expect(@enigma.encryption[:date]).to eq "1025"
     end
 
-    it 'can take message as a string' do
+    it 'can'
+
+    xit 'can encode a message' do
+        expect(@enigma.encode('hello world')).to eq "keder ohulw"
     end
 
 
