@@ -3,13 +3,13 @@ require 'date'
 
 class Shifter
     attr_reader :keys, :offsets
-    def initialize
-        @keys = rand(99999).to_s.rjust(5, "0")
-        @offsets = Date.today
+    def initialize(keys = rand(99999).to_s.rjust(5, "0"), offsets = Date.today)
+        @keys = keys
+        @offsets = offsets
     end
 
     def separator
-        @keys.chars
+        @keys.to_s.rjust(5, "0").chars
     end
     
     def key_a

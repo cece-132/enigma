@@ -14,10 +14,15 @@ class Enigma
 
     def encryptor(message, key, date = shifter.date_formater)
         new_key = shifter.keys
-        @encryption[:message] = message.downcase
+        # message =
+        @encryption[:message] = message
         @encryption[:key] = key
         @encryption[:date] = date
         @encryption
+    end
+
+    def encode(message)
+
     end
 
     def decrypt(ciphertext, key, date)

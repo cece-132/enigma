@@ -3,7 +3,7 @@ require_relative '../lib/rotater'
 
 RSpec.describe do Shifter
     before :each do
-        @shifter = Shifter.new    
+        @shifter = Shifter.new()    
         @rotater = Rotater.new    
     end
 
