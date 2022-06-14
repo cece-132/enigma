@@ -4,13 +4,14 @@ class Enigma
     attr_reader :alpha, :encryption, :counter, :new_message, :decryption
     def initialize
         @alpha = ("a".."z").to_a << " "
+        @shifter = Shifter.new
         @encryption = {}
         @decryption = {}
         @counter = 0
         @new_message = Array.new
     end
 
-    def encrypt(message, key, date) 
+    def encrypt(message, key = @shifter.keys, date = @shifter.date) 
         @shifter = Shifter.new(key, date)
         @shift_a = @shifter.key_a
         @shift_b = @shifter.key_b
@@ -39,7 +40,7 @@ class Enigma
         rotated.zip(@alpha).to_h
      end
 
-    def decrypt(message,key,date)
+    def decrypt(message,key,date = @shifter.date)
         @shifter = Shifter.new(key, date)
         @shift_a = @shifter.key_a
         @shift_b = @shifter.key_b
@@ -52,7 +53,7 @@ class Enigma
             @counter += 1
             @counter = 0 if @counter == 4
         end
-        
+
         encryption[:encryption] = @new_message.join
         encryption[:key] = key
         encryption[:date] = date

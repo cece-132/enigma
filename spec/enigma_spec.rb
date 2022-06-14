@@ -30,7 +30,10 @@ RSpec.describe do Enigma
         expect(@enigma.decrypt("keder ohulw", "02715", "040895")).to eq(expected)
     end
 
-    it ''
-
+    it 'can encrypt a message w/o a date' do
+        encrypted = @enigma.encrypt("hello world", "02715")
+        expect(encrypted[:key]).to eq '02715' 
+        expect(encrypted[:date]).to eq '140622' 
+    end
 
 end

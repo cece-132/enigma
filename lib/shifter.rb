@@ -3,10 +3,10 @@ require 'date'
 
 class Shifter
     attr_accessor :keys, :date
-    def initialize(keys, date = date_formater)
+    def initialize(keys = separator, date = date_formater)
         @keys = keys.to_s
-        @date = date
-        
+        @date = date.to_s
+
     end
 
     def separator
