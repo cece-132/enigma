@@ -1,16 +1,17 @@
 require_relative '../lib/shifter'
 require_relative '../lib/rotater'
+require 'pry'
 
 RSpec.describe do Shifter
     before :each do
-        @shifter = Shifter.new    
+        @shifter = Shifter.new('02715', '040895')    
         @rotater = Rotater.new    
     end
 
     it 'exists and has attributes' do
         expect(@shifter).to be_a Shifter
-        expect(@shifter.keys).to be_a Integer
-        expect(@shifter.offsets).to be_a Date
+        expect(@shifter.keys).to be_a String
+        expect(@shifter.date).to be_a String
     end
 
     it 'can separate the @keys' do
@@ -25,9 +26,13 @@ RSpec.describe do Shifter
         expect(@shifter.key_d).to be_a Integer
     end
 
+    it 'can format the date by DDMMYY'do
+        expect(@shifter.date_formater).to be_a Integer
+        expect(@shifter.date.to_s.chars.length).to eq 6
+    end
+
     it 'can square the date' do
         expect(@shifter.squared_date).to be_a Array
-        expect(@shifter.squared_date.first).to be_a String
         expect(@shifter.squared_date.length).to eq 4
     end
 

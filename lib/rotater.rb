@@ -15,5 +15,5 @@ class Rotater
  def revert_array_to_english(text)
   rotate_array(text).chars.map {|character| (character.ord - 6).chr}.join
  end
- 
+
 end
