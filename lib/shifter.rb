@@ -6,6 +6,7 @@ class Shifter
     def initialize(keys, date = date_formater)
         @keys = keys.to_s
         @date = date
+        
     end
 
     def separator
