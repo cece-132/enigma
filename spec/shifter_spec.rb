@@ -4,14 +4,14 @@ require 'pry'
 
 RSpec.describe do Shifter
     before :each do
-        @shifter = Shifter.new()    
+        @shifter = Shifter.new('02715', '040895')    
         @rotater = Rotater.new    
     end
 
     it 'exists and has attributes' do
         expect(@shifter).to be_a Shifter
         expect(@shifter.keys).to be_a String
-        expect(@shifter.date).to be_a Integer
+        expect(@shifter.date).to be_a String
     end
 
     it 'can separate the @keys' do

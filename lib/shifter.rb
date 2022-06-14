@@ -3,13 +3,17 @@ require 'date'
 
 class Shifter
     attr_accessor :keys, :date
-    def initialize(keys = rand(99999).to_s.rjust(5, "0"), date = date_formater)
+    def initialize(keys, date = date_formater)
         @keys = keys.to_s
         @date = date
     end
 
     def separator
-     @keys.rjust(5, "0").chars
+        if @keys.nil? == false
+         @keys.rjust(5, "0").chars
+        else
+           @keys = rand(99999).to_s.rjust(5, "0")
+        end
     end
     
     def key_a
@@ -47,3 +51,4 @@ class Shifter
         num.to_s.chars.last(4)
     end
 end
+

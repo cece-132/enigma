@@ -9,14 +9,25 @@ RSpec.describe do Enigma
     it 'exists and has attributes' do
         expect(@enigma).to be_a Enigma
         expect(@enigma.alpha.length).to eq 27
-        expect(@enigma.shifter).to be_a Shifter
-        expect(@enigma.shifter.keys.length).to eq 5
-        expect(@enigma.shifter.date).to be_a Integer
     end
 
     it 'can encrypt a message' do
-        @enigma.encrypt('hello world', '02715', '040895')
-        # expect(@enigma.encrypt('hello world', '02715', '1025')).to eq "keder ohulw"
+        expected = {
+                encryption: "keder ohulw",
+                key: "02715",
+                date: "040895"
+              }
+
+        expect(@enigma.encrypt('hello world', '02715', '040895')).to eq expected
+    end
+
+    it 'can decrypt a message' do
+        expected = {
+            encryption: "hello world",
+            key: "02715",
+            date: "040895"
+          }
+        expect(@enigma.decrypt("keder ohulw", "02715", "040895")).to eq expected
     end
 
 

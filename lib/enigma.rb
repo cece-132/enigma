@@ -2,49 +2,61 @@
 # the shifter class if nothing is input
 
 #If key.nil? == true reset key value to new_key
-
+require_relative 'shifter'
 class Enigma
-    attr_reader :alpha, :shifter, :encryption, :shift_a, :shift_b, :shift_c, :shift_d
+    attr_reader :alpha, :encryption, :counter, :new_message
     def initialize
         @alpha = ("a".."z").to_a << " "
-        @shifter = Shifter.new
         @encryption = {}
+        @counter = 0
+        @new_message = Array.new
+    end
+
+    def encrypt(message, key, date) 
+        @shifter = Shifter.new(key, date)
         @shift_a = @shifter.key_a
         @shift_b = @shifter.key_b
         @shift_c = @shifter.key_c
         @shift_d = @shifter.key_d
-        @new_message = []
+        @shifts = [@shift_a, @shift_b, @shift_c, @shift_d]
+
+        message.chars.map do |character|
+            @new_message << rotate(@shifts[@counter])[character]
+            @counter += 1
+            @counter = 0 if @counter == 4
+        end
+        encryption[:encryption] = @new_message.join
+        encryption[:key] = key
+        encryption[:date] = date
+        encryption
     end
 
-    def encrypt(message, key, date)           
-         @shifter.keys = key
-         @shifter.date = date
-         note = message.chars
-         rotate_a
-
+    def rotate(shift)
+       rotated = @alpha.rotate(shift)
+       @alpha.zip(rotated).to_h
     end
 
-    def rotate_a
-       rotated = @alpha.rotate(@shifter.key_a)
-       pairs = @alpha.zip(rotated).to_h
-        binding.pry
+    def decrypt(message,key,date)
+        @shifter = Shifter.new(key, date)
+        @shift_a = @shifter.key_a
+        @shift_b = @shifter.key_b
+        @shift_c = @shifter.key_c
+        @shift_d = @shifter.key_d
+        @shifts = [@shift_a, @shift_b, @shift_c, @shift_d]
 
+        message.chars.map do |character|
+            binding.pry
+            @new_message << rotate(@shifts[@counter])[character]
+            @counter += 1
+            @counter = 0 if @counter == 4
+        end
+        encryption[:encryption] = @new_message.join
+        encryption[:key] = key
+        encryption[:date] = date
+        encryption
     end
 
-    def rotate_b
-        rotated = @alpha.rotate(@shifter.key_b)
-        pairs = @alpha.zip(rotated).to_h
-    end
-
-    def rotate_c
-       rotated = @alpha.rotate(@shifter.key_c)
-       pairs = @alpha.zip(rotated).to_h
-    end
-
-    def rotate_d
-       rotated = @alpha.rotate(@shifter.key_d)
-       pairs = @alpha.zip(rotated).to_h
-    end
+    
 
     
 
