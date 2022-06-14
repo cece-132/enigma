@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2022-06-14T15:49:24-06:00">2022-06-14T15:49:24-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2022-06-14T16:21:29-06:00">2022-06-14T16:21:29-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -30,7 +30,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.28
+         1.27
        </span>
     </span> hits/line
     )
@@ -43,8 +43,8 @@
   </div>
 
   <div class="t-line-summary">
-    <b>61</b> relevant lines,
-    <span class="green"><b>61</b> lines covered</span> and
+    <b>66</b> relevant lines,
+    <span class="green"><b>66</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed. </span>
     (<span class="green">
   100.0%
@@ -73,9 +73,9 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#28327c2bbcf2084368d2dacd5fb4703193ebab17" class="src_link" title="spec/enigma_spec.rb">spec/enigma_spec.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">39</td>
-            <td class="cell--number">18</td>
-            <td class="cell--number">18</td>
+            <td class="cell--number">52</td>
+            <td class="cell--number">23</td>
+            <td class="cell--number">23</td>
             <td class="cell--number">0</td>
             <td class="cell--number">1.22</td>
             
@@ -134,8 +134,8 @@
     
 
     <div class="t-line-summary">
-      <b>18</b> relevant lines.
-      <span class="green"><b>18</b> lines covered</span> and
+      <b>23</b> relevant lines.
+      <span class="green"><b>23</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -202,8 +202,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="4" data-linenumber="6">
-            <span class="hits">4</span>
+          <li class="covered" data-hits="5" data-linenumber="6">
+            <span class="hits">5</span>
             
 
             
@@ -428,7 +428,7 @@
 
             
 
-            <code class="ruby">            encryption: &quot;hello world&quot;,</code>
+            <code class="ruby">            decryption: &quot;hello world&quot;,</code>
           </li>
         </div>
       
@@ -565,7 +565,150 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="39">
+          <li class="covered" data-hits="1" data-linenumber="39">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    it &#39;can decrypt w/o a date&#39; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="40">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        encrypted = @enigma.encrypt(&quot;hello world&quot;, &quot;02715&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="41">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        coded = encrypted[:encryption]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="42">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="43">
+            
+            
+
+            
+
+            <code class="ruby">        expected = {</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="44">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">            decryption: &#39;hello world&#39;,</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="45">
+            
+            
+
+            
+
+            <code class="ruby">            key: &quot;02715&quot;,</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="46">
+            
+            
+
+            
+
+            <code class="ruby">            date: &quot;040895&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="47">
+            
+            
+
+            
+
+            <code class="ruby">          }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="48">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="49">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        expect(@enigma.decrypt(coded, &quot;02715&quot;)).to eq expected</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="50">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="51">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="52">
             
             
 

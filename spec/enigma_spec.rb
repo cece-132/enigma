@@ -23,7 +23,7 @@ RSpec.describe do Enigma
 
     it 'can decrypt a message' do
         expected = {
-            encryption: "hello world",
+            decryption: "hello world",
             key: "02715",
             date: "040895"
           }

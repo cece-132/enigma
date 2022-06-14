@@ -4,17 +4,17 @@ require 'date'
 class Shifter
     attr_accessor :keys, :date
     def initialize(keys = separator, date = date_formater)
-        @keys = keys.to_s
-        @date = date.to_s
+      @keys = keys.to_s
+      @date = date.to_s
 
     end
 
     def separator
-        if @keys.nil? == false
-         @keys.rjust(5, "0").chars
-        else
-           @keys = rand(99999).to_s.rjust(5, "0")
-        end
+      if @keys.nil? == false
+        @keys.rjust(5, "0").chars
+      else
+        @keys = rand(99999).to_s.rjust(5, "0")
+      end
     end
     
     def key_a
@@ -34,22 +34,22 @@ class Shifter
     end
 
     def date_formater
-        date = []
-        if @date == nil || 0
-            @date = Date.today 
-            day = @date.strftime("%m/%d/%Y").delete("/").chars[2..3]
-            month = @date.strftime("%m/%d/%Y").delete("/").chars[0..1]
-            year =  @date.strftime("%m/%d/%Y").delete("/").chars[6..7]
-            date << day
-            date << month
-            date << year
-            @date = date.flatten.join.to_i
-        end
+     date = []
+     if @date == nil || 0
+        @date = Date.today 
+        day = @date.strftime("%m/%d/%Y").delete("/").chars[2..3]
+        month = @date.strftime("%m/%d/%Y").delete("/").chars[0..1]
+        year =  @date.strftime("%m/%d/%Y").delete("/").chars[6..7]
+        date << day
+        date << month
+        date << year
+        @date = date.flatten.join.to_i
+     end
     end
 
     def squared_date
-        num = @date.to_i ** 2
-        num.to_s.chars.last(4)
+     num = @date.to_i ** 2
+     num.to_s.chars.last(4)
     end
 end
 
